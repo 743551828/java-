@@ -25,22 +25,7 @@ package leetCode.无重复字符串的最长子串;
 // Related Topics 哈希表 双指针 字符串 Sliding Window 
 // 👍 4023 👎 0
 
-//queue使用map会节约时间和空间
-//class Solution {
-//    public int lengthOfLongestSubstring(String s) {
-//        int n = s.length(), ans = 0;
-//        Map<Character, Integer> map = new HashMap<>();
-//        for (int end = 0, start = 0; end < n; end++) {
-//            char alpha = s.charAt(end);
-//            if (map.containsKey(alpha)) {
-//                start = Math.max(map.get(alpha), start);
-//            }
-//            ans = Math.max(ans, end - start + 1);
-//            map.put(s.charAt(end), end + 1);
-//        }
-//        return ans;
-//    }
-//}
+
 
 import java.util.*;
 
@@ -78,3 +63,21 @@ class Solution {
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
+
+
+//queue使用map会节约时间和空间，尽量避免数组复制。
+//class Solution {
+//    public int lengthOfLongestSubstring(String s) {
+//        int n = s.length(), ans = 0;
+//        Map<Character, Integer> map = new HashMap<>();
+//        for (int end = 0, start = 0; end < n; end++) {
+//            char alpha = s.charAt(end);
+//            if (map.containsKey(alpha)) {
+//                start = Math.max(map.get(alpha), start);
+//            }
+//            ans = Math.max(ans, end - start + 1);
+//            map.put(s.charAt(end), end + 1);
+//        }
+//        return ans;
+//    }
+//}
